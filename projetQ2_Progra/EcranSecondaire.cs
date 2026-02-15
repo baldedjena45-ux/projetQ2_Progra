@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace projetQ2_Progra
 {
-    public partial class EcranPrincipal : Form
+    public partial class EcranSecondaire : Form
     {
-        public EcranPrincipal()
+        public EcranSecondaire()
         {
             InitializeComponent();
         }

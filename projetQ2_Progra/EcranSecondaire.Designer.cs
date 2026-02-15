@@ -1,6 +1,6 @@
 ﻿namespace projetQ2_Progra
 {
-    partial class EcranPrincipal
+    partial class EcranSecondaire
     {
         /// <summary>
         /// Required designer variable.

@@ -5,14 +5,14 @@ using System.Windows.Forms;
 namespace projetQ2_Progra
 
 {
-    public partial class Form1 : Form
+    public partial class EcranDemarrage : Form
     {
-        // On garde 2 images en mémoire
+        
         private Image imgA;
         private Image imgB;
         private bool permute = false;
 
-        public Form1()
+        public EcranDemarrage()
         {
             InitializeComponent();
 
@@ -20,13 +20,13 @@ namespace projetQ2_Progra
             imgA = pictureBox1.Image;
             imgB = pictureBox2.Image;
 
-            // Centrage initial
+            
             CentrerPictureBoxes();
         }
 
         private void btnPermuter_Click(object sender, EventArgs e)
         {
-            // Permute les images
+            
             permute = !permute;
 
             if (permute)
@@ -40,7 +40,7 @@ namespace projetQ2_Progra
                 pictureBox2.Image = imgB;
             }
 
-            // Recentrer si nécessaire
+            
             CentrerPictureBoxes();
         }
 
@@ -72,12 +72,47 @@ namespace projetQ2_Progra
         {
             this.Hide(); 
 
-            using (EcranPrincipal f = new EcranPrincipal())
+            using (EcranSecondaire f = new EcranSecondaire())
             {
                 f.ShowDialog(); 
             }
             
             this.Show();
         }
+
+        private void FonctionNonImplantee(object sender, EventArgs e)
+        {
+            if (sender is ToolStripMenuItem item)
+                MessageBox.Show($"La fonction '{item.Text}' n'est pas encore implémentée.",
+                    "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("Fonction non implémentée.",
+                    "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void mnuQuitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void mnuAPropos_Click(object sender, EventArgs e)
+        {
+            using (EcranAPropos f = new EcranAPropos())
+            {
+                f.ShowDialog();
+            }
+        }
+
+        private void mnuProgression_Click(object sender, EventArgs e)
+        {
+            using (EcranProgression f = new EcranProgression())
+            {
+                f.ShowDialog();
+            }
+        }
+
+
+
+
     }
 }

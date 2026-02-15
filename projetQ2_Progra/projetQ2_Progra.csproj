@@ -46,25 +46,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="EcranAPropos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="EcranAPropos.Designer.cs">
+      <DependentUpon>EcranAPropos.cs</DependentUpon>
     </Compile>
-    <Compile Include="EcranPrincipal.cs">
+    <Compile Include="EcranDemarrage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EcranPrincipal.Designer.cs">
-      <DependentUpon>EcranPrincipal.cs</DependentUpon>
+    <Compile Include="EcranDemarrage.Designer.cs">
+      <DependentUpon>EcranDemarrage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EcranProgression.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EcranProgression.Designer.cs">
+      <DependentUpon>EcranProgression.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EcranSecondaire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EcranSecondaire.Designer.cs">
+      <DependentUpon>EcranSecondaire.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="EcranPrincipal.resx">
-      <DependentUpon>EcranPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="EcranAPropos.resx">
+      <DependentUpon>EcranAPropos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="EcranProgression.resx">
+      <DependentUpon>EcranProgression.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EcranSecondaire.resx">
+      <DependentUpon>EcranSecondaire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EcranDemarrage.resx">
+      <DependentUpon>EcranDemarrage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -94,6 +112,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\snoop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="note.cur.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
