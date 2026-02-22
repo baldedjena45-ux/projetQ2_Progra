@@ -111,8 +111,18 @@ namespace projetQ2_Progra
             }
         }
 
+        private void mnuListe_Click(object sender, EventArgs e)
+        {
+            using (EcranListe f = new EcranListe())
+            {
+                f.ShowDialog();
+            }
+        }
 
 
+        private void EcranDemarrage_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -58,6 +58,12 @@
     <Compile Include="EcranDemarrage.Designer.cs">
       <DependentUpon>EcranDemarrage.cs</DependentUpon>
     </Compile>
+    <Compile Include="EcranListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EcranListe.Designer.cs">
+      <DependentUpon>EcranListe.cs</DependentUpon>
+    </Compile>
     <Compile Include="EcranProgression.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EcranAPropos.resx">
       <DependentUpon>EcranAPropos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EcranListe.resx">
+      <DependentUpon>EcranListe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EcranProgression.resx">
       <DependentUpon>EcranProgression.cs</DependentUpon>

@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.btnPermuter = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnOuvrir = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuControles = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,9 +42,11 @@
             this.mnuAide = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAPropos = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPermuter
@@ -59,26 +59,6 @@
             this.btnPermuter.Text = "Permuter";
             this.btnPermuter.UseVisualStyleBackColor = false;
             this.btnPermuter.Click += new System.EventHandler(this.btnPermuter_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::projetQ2_Progra.Properties.Resources.freeky;
-            this.pictureBox1.Location = new System.Drawing.Point(136, 88);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 73);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::projetQ2_Progra.Properties.Resources.snoop;
-            this.pictureBox2.Location = new System.Drawing.Point(323, 88);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(130, 73);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
             // 
             // btnOuvrir
             // 
@@ -123,7 +103,7 @@
             this.mnuListe.Name = "mnuListe";
             this.mnuListe.Size = new System.Drawing.Size(279, 34);
             this.mnuListe.Text = "Liste";
-            this.mnuListe.Click += new System.EventHandler(this.FonctionNonImplantee);
+            this.mnuListe.Click += new System.EventHandler(this.mnuListe_Click);
             // 
             // mnuProgression
             // 
@@ -170,7 +150,7 @@
             // mnuAPropos
             // 
             this.mnuAPropos.Name = "mnuAPropos";
-            this.mnuAPropos.Size = new System.Drawing.Size(270, 34);
+            this.mnuAPropos.Size = new System.Drawing.Size(188, 34);
             this.mnuAPropos.Text = "A Propos";
             this.mnuAPropos.Click += new System.EventHandler(this.mnuAPropos_Click);
             // 
@@ -179,6 +159,26 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::projetQ2_Progra.Properties.Resources.snoop;
+            this.pictureBox2.Location = new System.Drawing.Point(323, 88);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(130, 73);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::projetQ2_Progra.Properties.Resources.freeky;
+            this.pictureBox1.Location = new System.Drawing.Point(136, 88);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(120, 73);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // EcranDemarrage
             // 
@@ -193,11 +193,12 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "EcranDemarrage";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.EcranDemarrage_Load);
             this.Click += new System.EventHandler(this.btnPermuter_Click);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
