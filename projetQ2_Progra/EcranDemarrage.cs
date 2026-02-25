@@ -119,6 +119,12 @@ namespace projetQ2_Progra
             }
         }
 
+        private void mnuMalware_Click(object sender, EventArgs e)
+        {
+            new FicMalware().Show();
+        }
+
+
 
         private void EcranDemarrage_Load(object sender, EventArgs e)
         {

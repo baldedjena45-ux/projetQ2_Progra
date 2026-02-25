@@ -44,6 +44,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.mnuMalware = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -127,7 +128,8 @@
             // mnuApplications
             // 
             this.mnuApplications.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuEditeur});
+            this.mnuEditeur,
+            this.mnuMalware});
             this.mnuApplications.Name = "mnuApplications";
             this.mnuApplications.Size = new System.Drawing.Size(126, 29);
             this.mnuApplications.Text = "Applications";
@@ -135,7 +137,7 @@
             // mnuEditeur
             // 
             this.mnuEditeur.Name = "mnuEditeur";
-            this.mnuEditeur.Size = new System.Drawing.Size(169, 34);
+            this.mnuEditeur.Size = new System.Drawing.Size(270, 34);
             this.mnuEditeur.Text = "Editeur";
             this.mnuEditeur.Click += new System.EventHandler(this.FonctionNonImplantee);
             // 
@@ -180,6 +182,13 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // mnuMalware
+            // 
+            this.mnuMalware.Name = "mnuMalware";
+            this.mnuMalware.Size = new System.Drawing.Size(270, 34);
+            this.mnuMalware.Text = "Malware";
+            this.mnuMalware.Click += new System.EventHandler(this.mnuMalware_Click);
+            // 
             // EcranDemarrage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -221,6 +230,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuEditeur;
         private System.Windows.Forms.ToolStripMenuItem mnuAPropos;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem mnuMalware;
     }
 }
 

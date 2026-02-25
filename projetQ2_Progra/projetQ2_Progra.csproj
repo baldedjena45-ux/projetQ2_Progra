@@ -76,6 +76,12 @@
     <Compile Include="EcranSecondaire.Designer.cs">
       <DependentUpon>EcranSecondaire.cs</DependentUpon>
     </Compile>
+    <Compile Include="FicMalware.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicMalware.Designer.cs">
+      <DependentUpon>FicMalware.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EcranAPropos.resx">
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EcranDemarrage.resx">
       <DependentUpon>EcranDemarrage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicMalware.resx">
+      <DependentUpon>FicMalware.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

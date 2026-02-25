@@ -86,7 +86,29 @@ namespace projetQ2_Progra
                 return;
             }
 
+            
+            int encSupprime = LireDonneeCachee(idx);
+
+            
             lbPersonne.Items.RemoveAt(idx);
+
+            
+            for (int i = 0; i < lbPersonne.Items.Count; i++)
+            {
+                int enc = LireDonneeCachee(i);
+                if (enc > encSupprime)
+                {
+                    EcrireDonneeCachee(i, enc - 1);
+                }
+            }
+
+            int maxEnc = 0;
+            for (int i = 0; i < lbPersonne.Items.Count; i++)
+            {
+                int enc = LireDonneeCachee(i);
+                if (enc > maxEnc) maxEnc = enc;
+            }
+            compteurEncodage = maxEnc;
         }
 
         private void bConfirmer_Click(object sender, EventArgs e)
@@ -147,19 +169,34 @@ namespace projetQ2_Progra
                 lbPersonne.Items.Clear();
                 string[] lignes = File.ReadAllLines(NomFichier);
 
-                compteurEncodage = 0;
+                int maxEnc = 0;
 
                 foreach (string ligne in lignes)
                 {
-                    if (!string.IsNullOrWhiteSpace(ligne))
-                    {
-                        string txt = ligne.Trim();
-                        int indexAjoute = lbPersonne.Items.Add(txt);
+                    if (string.IsNullOrWhiteSpace(ligne))
+                        continue;
 
-                        compteurEncodage++;
-                        EcrireDonneeCachee(indexAjoute, compteurEncodage);
-                    }
+                    string l = ligne.Trim();
+
+                    
+                    int p = l.LastIndexOf('#');
+                    if (p <= 0 || p == l.Length - 1)
+                        continue; 
+
+                    string texte = l.Substring(0, p).Trim();
+                    string encStr = l.Substring(p + 1).Trim();
+
+                    if (!int.TryParse(encStr, out int enc))
+                        continue; 
+
+                    int indexAjoute = lbPersonne.Items.Add(texte);
+                    EcrireDonneeCachee(indexAjoute, enc);
+
+                    if (enc > maxEnc) maxEnc = enc;
                 }
+
+                
+                compteurEncodage = maxEnc;
             }
             catch (Exception ex)
             {
@@ -177,10 +214,15 @@ namespace projetQ2_Progra
 
             try
             {
-                string[] lignes = lbPersonne.Items
-                    .Cast<object>()
-                    .Select(x => x.ToString())
-                    .ToArray();
+                var lignes = new List<string>();
+
+                for (int i = 0; i < lbPersonne.Items.Count; i++)
+                {
+                    string texte = lbPersonne.Items[i].ToString();
+                    int enc = LireDonneeCachee(i);
+
+                    lignes.Add($"{texte}#{enc}");
+                }
 
                 File.WriteAllLines(NomFichier, lignes);
 
@@ -192,6 +234,7 @@ namespace projetQ2_Progra
                 MessageBox.Show("Erreur lors de l'enregistrement : " + ex.Message, "Erreur",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void lbPersonne_DoubleClick(object sender, EventArgs e)
@@ -224,7 +267,7 @@ namespace projetQ2_Progra
             
             string txt = lbPersonne.SelectedItem.ToString();
 
-            //extraire nom et qualité
+            
             int p1 = txt.LastIndexOf(" (");
             int p2 = txt.LastIndexOf(")");
 
